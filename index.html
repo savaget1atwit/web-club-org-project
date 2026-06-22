@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <title>Your Club Goes Here</title>
+</head>
+
+<body>
+
+    <section id = "">
+        
+    </section>
+
+    <!-- Login portal for clubs to enter the organization their affliated with, ID to attach to org roles
+    and password(?) -->
+
+    <section id="club-login-form">
+        <!-- org, name/id, password -->
+        <Form id="club-login-portal">
+            <h1>Please log in to access your org's information...</h1>
+            
+            <label for = "form-org-input">Affiliated Organization</label><br>
+            <input type = text id = "form-org-input" required><br><br>
+
+            <label for ="wID">WIT ID:</label><br>
+            <input type = "text" id = "wID" pattern = "[W]{1}\d{8}" required><br><br>
+
+            <label for ="password">Password:</label><br>
+            <input type = "password" id = "pass" name = "pass" minLength = "8" required><br><br>
+
+            <button type ="submit" id ="submit">Submit</button>
+         </Form>
+    </section>
+
+
+
+
+</body>
