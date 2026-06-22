@@ -1,0 +1,25 @@
+
+
+#navigation_tabs ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: gray;
+}
+
+#navigation_tabs ul li{
+    float: left;
+}
+
+#navigation_tabs ul li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#navigation_tabs ul li a:hover{
+    background-color: lightblue;
+}

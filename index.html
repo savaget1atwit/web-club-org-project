@@ -2,26 +2,41 @@
 <html lang = "en">
 <head>
     <meta charset = "UTF-8">
+    <link href="style.css" rel = "stylesheet">
     <title>Your Club Goes Here</title>
 </head>
 
 <body>
+    <!-- could have feature: 
+        customization of color schemes based on club
+        nfc id reader -->
 
-    <section id = "">
-        
+    <section id ="header_nav">
+        <h1>Organization Name Goes Here</h1>
+        <nav id = "navigation_tabs">
+            <ul>
+                <li><a href= "">Home</a></li>
+                <li><a href= "">Calendar</a></li>
+                <li><a href= "">Events</a></li>
+                <li><a href= "">Club Information</a></li>
+            </ul>
+        </nav>
     </section>
 
     <!-- Login portal for clubs to enter the organization their affliated with, ID to attach to org roles
     and password(?) -->
 
-    <section id="club-login-form">
+    <section id="club_login_form">
         <!-- org, name/id, password -->
-        <Form id="club-login-portal">
+        <Form id="club_login_portal">
             <h1>Please log in to access your org's information...</h1>
             
-            <label for = "form-org-input">Affiliated Organization</label><br>
+            <!-- autocomplete possibly after certain amount of characters -->
+            <label for = "form_org_input">Affiliated Organization</label><br>
             <input type = text id = "form-org-input" required><br><br>
 
+
+            <!-- general body able type in org and press 'just view as general body' -->
             <label for ="wID">WIT ID:</label><br>
             <input type = "text" id = "wID" pattern = "[W]{1}\d{8}" required><br><br>
 
