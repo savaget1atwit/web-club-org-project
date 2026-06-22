@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body
+      <!-- This serves purpose for log in page.
+    Will serve as authentication and managing perms and who can view what!-->
+
+<header>
+    <h1>Student Organization Management Portal</h1>
+</header>
+
+<main>
+    <section class="login-container">
+        <h2>Login</h2>
+        <form>
+            <label for="organization">Organization</label>
+            <input type="text"
+                   id="organization"
+                   placeholder="Enter Organizzation Name"
+                   required>
+            <label for="wid">WIT ID</label>
+            <input type="text"
+                   id="wid"
+                   placeholder="W000123456"
+                   pattern="W\\d{9}"
+                   required>
+            <label for="password">Password</label>
+            <input type="password"
+                   id="password"
+                   minlength="9"
+                   required>
+            
+            <button type="submit">Login</button>
+        </form>
+    </section>
+</main>
+
+</html>
