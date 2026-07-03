@@ -4,38 +4,39 @@
 
 <head>
     <meta charset = "UTF-8">
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
     <link href="../style.css" rel = "stylesheet">
     <script src="../main.js" defer></script>
 </head>
 
+      <!--Login portal will serve as authentication and managing perms and who can view what!-->
+<header>
+    <h1>Student Organization Management Portal</h1>
+</header>
+
+
 <body>
-     <!-- could have feature: 
-        customization of color schemes based on club
-        nfc id reader 
-        remember me option-->
 
-
-    <!-- Login portal for clubs to enter the organization their affliated with, ID to attach to org roles
-    and password(?) -->
-    <section id="club_login_form">
-        <!-- org, name/id, password -->
-        <Form id="club_login_portal" method = "post">
+<main>
+    <section id="club_container">
+        <h2>Login:</h2>
+        <form id="org_login" method = "post">
             <h1>Please log in to access your org's information...</h1>
             
             <!-- autocomplete possibly after certain amount of characters -->
-            <label for = "form_org_input">Affiliated Organization</label><br>
+            <label for = "org">Affiliated Organization:</label><br>
             <input type = text id = "org" required><br><br>
-
 
             <!-- general body able type in org and press 'just view as general body' -->
             <label for ="wID">WIT ID:</label><br>
-            <input type = "text" id = "wID" pattern = "[W]{1}\d{8}" required><br><br>
+            <input type = "text" id = "wID" placeholder = "W000123456" pattern = "W\d{8}" required><br><br>
 
             <label for ="password">Password:</label><br>
-            <input type = "password" id = "password" name = "pass" minLength = "4" required><br><br>
+            <input type = "password" id = "password" minLength = "9" required><br><br>
 
             <button type ="button" onclick="auth()">Submit</button>
-         </Form>
+         </form>
     </section>
-
+</main>
 </html>

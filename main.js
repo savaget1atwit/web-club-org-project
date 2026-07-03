@@ -1,5 +1,5 @@
 
-
+// login authentication with alert for invalid inputs
 function auth (){
     var org = document.getElementById("org").value;
     var ID = document.getElementById("wID").value;
