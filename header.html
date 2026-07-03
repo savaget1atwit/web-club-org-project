@@ -1,29 +1,37 @@
 <!DOCTYPE html>
+<html>
+
 <html lang = "en">
 <head>
     <meta charset = "UTF-8">
+    <link href="../style.css" rel = "stylesheet">
+    <script src="../main.js" defer></script>
+    <link rel = "icon" type="images/icon" href="./media/favicon.ico">
+
     <title>Your Club Goes Here</title>
 </head>
 
-<body>
+<header>
 
     <!-- Horizontal Navigation bar phph(?) called in every page file 
-    Tabs include: Home, Calendar(eboard/general body meetings, events ), Events Page(previous and upcoming events), 
+    Tabs include: Home, About Us, Calendar(eboard/general body meetings, events ), Events Page(previous and upcoming events), 
     Club Information(Finances, eboard info), User Prefs (admin should have user permissions config, others possible notif preferences, phone, email...) -->
 
     <!-- certain tabs viewable based on login in or general view club button -->
     <section id ="header-nav">
         <h1>Organization Name Goes Here</h1>
-        <nav>
-            <ul id = "navigation-tabs">
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Calendar</li>
-                <li>Events</li>
-                <li>Club Information</li>
-                <li>User Preferences</li>
-                <li>Contact Me</li>
+        <nav id = "navigation_tabs">
+            <ul>
+                <li><a href = "">Home</a></li>
+                <!-- small about eboard, club name, attachment, where to find us,  -->
+                <li><a href = "">About Us</a></li>
+                <li><a href = "">Calendar</a></li>
+                <li><a href = "">Events</a></li>
+                <li><a href = "">Club Information</a></li>
+                <li><a href = "">User Preferences</a></li>
+                <li><a href = "">Contact Us</a></li>
             </ul>
         </nav>
     </section>
-</body>
+</header>
+</html>

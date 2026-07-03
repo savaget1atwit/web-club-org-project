@@ -1,34 +1,23 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html>
+    <html lang = "en">
+
 <head>
     <meta charset = "UTF-8">
-    <link href="style.css" rel = "stylesheet">
-    <title>Your Club Goes Here</title>
 </head>
 
 <body>
-    <!-- could have feature: 
+     <!-- could have feature: 
         customization of color schemes based on club
-        nfc id reader -->
+        nfc id reader 
+        remember me option-->
 
-    <section id ="header_nav">
-        <h1>Organization Name Goes Here</h1>
-        <nav id = "navigation_tabs">
-            <ul>
-                <li><a href= "">Home</a></li>
-                <li><a href= "">Calendar</a></li>
-                <li><a href= "">Events</a></li>
-                <li><a href= "">Club Information</a></li>
-            </ul>
-        </nav>
-    </section>
 
     <!-- Login portal for clubs to enter the organization their affliated with, ID to attach to org roles
     and password(?) -->
-
     <section id="club_login_form">
         <!-- org, name/id, password -->
-        <Form id="club_login_portal">
+        <Form id="club_login_portal" action = "home.php" method = "post">
             <h1>Please log in to access your org's information...</h1>
             
             <!-- autocomplete possibly after certain amount of characters -->
@@ -41,13 +30,10 @@
             <input type = "text" id = "wID" pattern = "[W]{1}\d{8}" required><br><br>
 
             <label for ="password">Password:</label><br>
-            <input type = "password" id = "pass" name = "pass" minLength = "8" required><br><br>
+            <input type = "password" id = "pass" name = "pass" minLength = "4" required><br><br>
 
             <button type ="submit" id ="submit">Submit</button>
          </Form>
     </section>
 
-
-
-
-</body>
+</html>
