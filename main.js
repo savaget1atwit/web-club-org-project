@@ -6,7 +6,7 @@ function auth (){
     var password = document.getElementById("password").value;
 
     if (org == "admin" && password == "user"){
-        window.location.replace("./home.php");
+        window.location.replace("./dashboard.php");
     } else {
         alert("Invalid Info");
         return;
