@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-    <html lang = "en">
+<html lang = "en">
 
 <head>
     <meta charset = "UTF-8">
@@ -8,6 +7,9 @@
 </head>
 
 <body>
+
+<?php include '../header.html' ?>
+
     <!-- General information about organization, including eboard members, meeting times for general body
     mission statement,  -->
     <section id = "about_us">

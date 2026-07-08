@@ -1,5 +1,4 @@
 
-
 #navigation_tabs ul {
     list-style-type: none;
     margin: 0;
@@ -21,6 +20,26 @@
 }
 
 #navigation_tabs ul li a:hover{
-    background-color: lightblue;
+    background-color: rgb(53, 186, 231);
 }
 
+#texty{
+    color: blue;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  justify-content: space-evenly;
+  background-color: #fff;
+  color: #444;
+}
+
+.box {
+  background-color: #601d1d;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}

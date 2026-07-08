@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-    <html lang = "en">
+<html lang = "en">
 
 <head>
     <meta charset = "UTF-8">
@@ -20,7 +19,6 @@
 
 <main>
     <section id="club_container">
-        <h2>Login:</h2>
         <form id="org_login" method = "post">
             <h1>Please log in to access your org's information...</h1>
             
@@ -33,7 +31,7 @@
             <input type = "text" id = "wID" placeholder = "W000123456" pattern = "W\d{8}" required><br><br>
 
             <label for ="password">Password:</label><br>
-            <input type = "password" id = "password" minLength = "9" required><br><br>
+            <input type = "password" id = "password" minLength = "4" required><br><br>
 
             <button type ="button" onclick="auth()">Submit</button>
          </form>

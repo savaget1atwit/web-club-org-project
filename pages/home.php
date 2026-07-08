@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html>    
     <html lang = "en">
+
 <head>
     <meta charset = "UTF-8">
+    <link rel = "icon" type="images/icon" href="/media/favicon.ico">
     <title>Your Club Goes Here</title>
 </head>
 
 <body>
 <?php include '../header.html' ?>
  
-    <section id = "home_page">
-        <p>Home Page!</p>
-    </section>
+    <div id = "home_page">
+        <p id = 'texty'>Home Page!</p>
+    </div>
 </body>
 </html>
