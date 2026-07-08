@@ -22,13 +22,28 @@
     </p>
     <hr>
 
-    <h2>Explore by Tag!</h2><br>
-    <h3>Tag 1: Career Building</h3><br>
-    <h3>Tag 2: How To's</h3><br>
-    <h3>Horizontal clickable tag carousel to filter by</h3>
+    <section id='tag1'>
+        <h2>Explore by Tag!</h2><br>
+        <h3>Tag 1: Career Building</h3><br>
 
-    <hr><br> 
-    
+            <div id = 'slides'>
+                <div class = 'hBox1'>Event 1</div>
+                <div class = 'hBox2'>Event 2</div>
+                <div class = 'hBox3'>Event 3</div>
+                <div class = 'hBox4'>Event 4</div>
+        </div>
+    </section>
+
+    <section id= 'tag2'>
+        <h3>Tag 2: How To's</h3><br>
+        <div class = 'wrapper'>
+            <div class = 'hBox'>Event 1</div>
+            <div class = 'hBox'>Event 2</div>
+            <div class = 'hBox'>Event 3</div>
+            <div class = 'hBox'>Event 4</div>
+        </div>        
+        <br><hr>
+    </section>
     <!-- Grid presentation with poster and bottom bar with general details, clickable. -->
     <h2>Explore All</h2>
 

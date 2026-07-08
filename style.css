@@ -27,6 +27,21 @@
     color: blue;
 }
 
+/* events page */
+
+
+.slides{
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.slides::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+}
+
+
 .wrapper {
   display: grid;
   grid-template-columns: auto auto auto auto;
