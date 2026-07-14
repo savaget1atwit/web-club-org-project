@@ -6,11 +6,13 @@
         <title>Club: Dashboard</title>
     </head>
 
-<body>
     <!-- this will serve as dashboard, 
      main page users after logging on, it will
       display announcements, events, attendance.. for now!
       always subject to change :) -->
+      
+<body class = 'dashboard'>
+
     <?php include '../header.html' ?>
 
  <header> 
@@ -24,8 +26,15 @@
 
 <main>
 
-    <h2>Welcome, User</h2>
-
+    <h2>Welcome, $User</h2>
+    <div id ='profile'>
+        <div id = 'pic'><img src ="../media/blue_star.png"></div>
+        <div id = 'profile_text'>
+        <b>Fname Lname</b><br>
+        School, Year<br>
+        Eboard Position
+        </div>
+    </div>
     <section class="card">
         <h3>Upcoming Events</h3>
         <p>General Body Meeting - July 10</p>

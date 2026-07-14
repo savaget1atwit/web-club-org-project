@@ -10,6 +10,7 @@
     font-family: "Jost", sans-serif;
 }
 
+/* navigation toolbar */
 #navigation_tabs ul {
     list-style-type: none;
     margin: 0;
@@ -31,10 +32,18 @@
 }
 
 #navigation_tabs ul li a:hover{
-    background-color: rgb(53, 186, 231);
+    background-color: #35bae7;
 }
 
 
+/* dashboard page */
+.dashboard #profile{
+    width: 50%;
+}
+
+.dashboard #profile:hover{
+    background-color: #35bae7;
+}
 /* events page */
 
 .scroll_container{
@@ -127,7 +136,7 @@ button{
     border: 5px;
 
     color: rgb(255, 255, 255);
-    background-color: rgb(65, 153, 253);
+    background-color: #4199fd;
 }
 
 button#edit_picture{
@@ -169,6 +178,6 @@ button#edit_picture{
 }
 
 button#save_profile{
-    
+
 }
 
