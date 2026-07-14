@@ -1,4 +1,15 @@
 
+.jost-400 {
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+*{
+    font-family: "Jost", sans-serif;
+}
+
 #navigation_tabs ul {
     list-style-type: none;
     margin: 0;
@@ -23,38 +34,141 @@
     background-color: rgb(53, 186, 231);
 }
 
-#texty{
-    color: blue;
-}
 
 /* events page */
 
-
-.slides{
-    display: flex;
+.scroll_container{
+    background-color: gray;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 10px;
+    
+    height: 150px;
 }
 
-.slides::-webkit-scrollbar{
-    width: 10px;
-    height: 10px;
+.scroll_container .card{
+    display: inline-block;
+    width: 250px;
+    min-height: 100px;
+    margin-right: 10px;
+    padding: 15px;
+
+    background-color: white;
+    border-radius: 8px;
+    vertical-align: top;
+    white-space: normal;
 }
 
 
 .wrapper {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 10px;
-  justify-content: space-evenly;
-  background-color: #fff;
-  color: #444;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 4px;
+    justify-content: start;
+    background-color: #fff;
+    color: #444;
 }
 
 .box {
-  background-color: #601d1d;
-  color: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 150%;
+    background-color: #291d60;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 100%;
 }
+
+.box img{
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+
+/*User preferences page */
+
+#profile{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 0;
+
+    position:relative;
+
+    border-radius: 10px;
+    border: 2px;
+
+    height: 100px;
+    width: auto;
+
+    background-color: rgb(239, 239, 239);
+}
+
+#profile img{
+    padding: 10px 10px;
+    margin: 10px;
+    width: 75px;
+    height: auto;
+    border-radius: 50%;
+}
+
+#profile_text{
+    text-align: left;
+    margin: 40px;
+
+}
+
+button{
+
+    height: 30px;
+    width: 100px;
+
+    border-radius: 5px;
+    border: 5px;
+
+    color: rgb(255, 255, 255);
+    background-color: rgb(65, 153, 253);
+}
+
+button#edit_picture{
+    position: absolute;
+    top: 40px;
+    right: 20px;
+
+}
+
+#bio_wrapper{
+    position: relative;
+    width: 400 px;
+}
+
+#bio{
+    height: 80px;
+    width: 100%;
+    box-sizing: border-box;
+
+    border-radius: 8px;
+    border: 2px solid rgb(195, 193, 193);
+    outline: none;
+    
+    color: black;
+    background-color: rgb(239, 239, 239);
+
+    padding: 12px 12px 24px 12px;
+    font-family: inherit;
+    font-size: 15px;
+    resize: none;
+}
+
+#bio_counter{
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    font-size: 12px;
+    color: rgb(150,150,150);
+}
+
+button#save_profile{
+    
+}
+

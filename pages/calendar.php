@@ -3,7 +3,7 @@
 
 <head>
     <meta charset = "UTF-8">
-    <title>Your Club Goes Here</title>
+    <title>Club: Calendar</title>
      
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

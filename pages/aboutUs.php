@@ -3,7 +3,7 @@
 
 <head>
     <meta charset = "UTF-8">
-    <title>Your Club Goes Here</title>
+    <title>Club: About Us</title>
 </head>
 
 <body>

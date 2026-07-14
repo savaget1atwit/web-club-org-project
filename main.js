@@ -13,6 +13,23 @@ function auth (){
     }
 }
 
+//user pref bio text counter
+document.addEventListener('DOMContentLoaded', () =>{
+    console.log('Script running');
+
+    const bio = document.getElementById('bio');
+    const counter = document.getElementById('bio_counter');
+    const maxLength = 150;
+
+    console.log('bio:', bio);
+    console.log('counter', counter);
+
+    bio.addEventListener('input', () => {
+        counter.textContent = `${bio.value.length} / ${maxLength}`;
+    });
+});
+
+
 //mock calendar srt up 
 // to be added: editEvent function, addEvent function, insert event into databse, 
 // secondary side day panel event listener, color coded events w key
@@ -45,4 +62,6 @@ $(document).ready(function(){
         ]
     });
 });
+
+
 

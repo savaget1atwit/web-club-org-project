@@ -4,7 +4,7 @@
 <head>
     <meta charset = "UTF-8">
     <link rel = "icon" type="images/icon" href="/media/favicon.ico">
-    <title>Your Club Goes Here</title>
+    <title>Club: Home</title>
 </head>
 
 <body>

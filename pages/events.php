@@ -4,7 +4,7 @@
 <head>
     <meta charset = "UTF-8">
     <link rel = "icon" type="images/icon" href="/media/favicon.ico">
-    <title>Your Club Goes Here</title>
+    <title>club: Events</title>
 </head>
 
 
@@ -26,36 +26,113 @@
         <h2>Explore by Tag!</h2><br>
         <h3>Tag 1: Career Building</h3><br>
 
-            <div id = 'slides'>
-                <div class = 'hBox1'>Event 1</div>
-                <div class = 'hBox2'>Event 2</div>
-                <div class = 'hBox3'>Event 3</div>
-                <div class = 'hBox4'>Event 4</div>
+            <div class = 'scroll_container'>
+                <div class = 'card'>
+                    <h2>Event 1</h2>
+                    <p> More text about the event</p>
+                </div>
+                <div class = 'card'>
+                    <h2>Event 1</h2>
+                    <p> More text about the event</p>
+                </div>
+                <div class = 'card'>
+                    <h2>Event 1</h2>
+                    <p> More text about the event</p>
+                </div>
         </div>
     </section>
 
     <section id= 'tag2'>
         <h3>Tag 2: How To's</h3><br>
-        <div class = 'wrapper'>
-            <div class = 'hBox'>Event 1</div>
-            <div class = 'hBox'>Event 2</div>
-            <div class = 'hBox'>Event 3</div>
-            <div class = 'hBox'>Event 4</div>
-        </div>        
+            <div class = 'scroll_container'>
+                <div class = 'card'>
+                    <h2>Event 1</h2>
+                    <p> More text about the event</p>
+                </div>
+                <div class = 'card'>
+                    <h2>Event 1</h2>
+                    <p> More text about the event</p>
+                </div>
+                <div class = 'card'>
+                    <h2>Event 1</h2>
+                    <p> More text about the event</p>
+                </div>
+                <div class = 'card'>
+                    <h2>Event 1</h2>
+                    <p> More text about the event</p>
+                </div>
+                <div class = 'card'>
+                    <h2>Event 1</h2>
+                    <p> More text about the event</p>
+                </div>
+                <div class = 'card'>
+                    <h2>Event 1</h2>
+                    <p> More text about the event</p>
+                </div>
+        </div>  
         <br><hr>
     </section>
+
+    <section id = 'extra_tags'>
+        <h3>Other tags:</h3>
+
+        <div class = 'tag'>
+            <p>tag 1</p>
+        </div>
+        <div class = 'tag'>
+            <p>tag 1</p>
+        </div>
+        <div class = 'tag'>
+            <p>tag 1</p>
+        </div>
+        <br> <hr>
+    </section>
+
+
     <!-- Grid presentation with poster and bottom bar with general details, clickable. -->
     <h2>Explore All</h2>
 
     <div class = 'wrapper'>
-        <div class = 'box'>Event 1</div>
-        <div class = 'box'>Event 2</div>
-        <div class = 'box'>Event 3</div>
-        <div class = 'box'>Event 4</div>
-        <div class = 'box'>Event 5</div>
-        <div class = 'box'>Event 6</div>
-        <div class = 'box'>Event 7</div>
-        <div class = 'box'>Event 8</div>
+        <div class = 'box'>
+            <img src ="../media/blue_star.png">
+            <h2>Event 1</h2>
+            <p>detail detail detail</p>
+        </div>
+        <div class = 'box'>
+            <img src ="../media/blue_star.png">
+            <h2>Event 2</h2>
+            <p>detail detail detail</p>
+        </div>
+        <div class = 'box'>
+            <img src ="../media/blue_star.png">
+            <h2>Event 3</h2>
+            <p>detail detail detail</p>
+        </div>
+        <div class = 'box'>
+            <img src ="../media/blue_star.png">
+            <h2>Event 4</h2>
+            <p>detail detail detail</p>
+        </div>
+        <div class = 'box'>
+            <img src ="../media/blue_star.png">
+            <h2>Event 5</h2>
+            <p>detail detail detail</p>
+        </div>
+        <div class = 'box'>
+            <img src ="../media/blue_star.png">
+            <h2>Event 6</h2>
+            <p>detail detail detail</p>
+        </div>
+        <div class = 'box'>
+            <img src ="../media/blue_star.png">
+            <h2>Event 7</h2>
+            <p>detail detail detail</p>
+        </div>
+        <div class = 'box'>
+            <img src ="../media/blue_star.png">
+            <h2>Event 8</h2>
+            <p>detail detail detail</p>
+        </div>
     </div>
 
 </body>
