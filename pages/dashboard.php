@@ -1,3 +1,15 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$user = $_SESSION['user'];
+
+?>
 <!DOCTYPE html>
 <html lang ="en">
     <head>
@@ -26,14 +38,25 @@
 
 <main>
 
-    <h2>Welcome, $User</h2>
-    <div id ='profile'>
-        <div id = 'pic'><img src ="../media/blue_star.png"></div>
-        <div id = 'profile_text'>
-        <b>Fname Lname</b><br>
-        School, Year<br>
-        Eboard Position
-        </div>
+    <h2>
+    Welcome, <?php echo htmlspecialchars($user['name']); ?>
+</h2>
+    <div id = 'profile_text'>
+
+<b>
+<?php echo htmlspecialchars($user['name']); ?>
+</b>
+<br>
+
+Organization:
+<?php echo htmlspecialchars($user['organization']); ?>
+
+<br>
+
+Role:
+<?php echo htmlspecialchars($user['role']); ?>
+
+</div>
     </div>
     <section class="card">
         <h3>Upcoming Events</h3>
@@ -46,8 +69,15 @@
     </section>
 
     <section class="Card">
-        <h3>Attendance Points</h3>
-        <p> 80 points</p>
+
+    <h3>
+    Attendance Points
+    </h3>
+
+    <p>
+    <?php echo $user['attendance_points']; ?> points
+    </p>
+
     </section>
 
     <section class="card">
