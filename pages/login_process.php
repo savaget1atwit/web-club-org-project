@@ -4,20 +4,24 @@ session_start();
 
 include "../db.php";
 
+echo "<h2>Debugging Login</h2>";
 
 echo "<pre>";
 print_r($_POST);
 echo "</pre>";
 
 
-$organization = $_POST['organization'];
-$wid = $_POST['wid'];
-$password = $_POST['password'];
+$organization = $_POST['organization'] ?? '';
+$wid = $_POST['wid'] ?? '';
+$password = $_POST['password'] ?? '';
 
 
-$sql = "SELECT * FROM users 
-        WHERE organization = ?
-        AND wid = ?";
+echo "Organization entered: " . $organization . "<br>";
+echo "WID entered: " . $wid . "<br>";
+echo "Password entered: " . $password . "<br><br>";
+
+
+$sql = "SELECT * FROM users WHERE organization = ? AND wid = ?";
 
 
 $stmt = $conn->prepare($sql);
@@ -28,40 +32,39 @@ $stmt->bind_param(
     $wid
 );
 
-
 $stmt->execute();
 
 
 $result = $stmt->get_result();
 
 
-echo "Rows found: " . $result->num_rows . "<br>";
+echo "Number of users found: " . $result->num_rows . "<br><br>";
 
 
-if($result->num_rows == 1){
+if ($result->num_rows == 1) {
 
     $user = $result->fetch_assoc();
 
     echo "User found:<br>";
+
+    echo "<pre>";
     print_r($user);
-
-    echo "<br>Entered password: " . $password;
-    echo "<br>Database password: " . $user['password'];
+    echo "</pre>";
 
 
-    if($password == $user['password']){
+    if ($password == $user['password']) {
 
-        echo "<br>Password matches!";
+        echo "PASSWORD MATCHED";
 
     } else {
 
-        echo "<br>Password does not match";
+        echo "PASSWORD DOES NOT MATCH";
 
     }
 
 } else {
 
-    echo "No user found";
+    echo "NO USER FOUND";
 
 }
 
