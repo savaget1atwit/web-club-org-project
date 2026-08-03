@@ -1,17 +1,6 @@
 
-// login authentication with alert for invalid inputs
-function auth (){
-    var org = document.getElementById("org").value;
-    var ID = document.getElementById("wID").value;
-    var password = document.getElementById("password").value;
-
-    if (org == "admin" && password == "user"){
-        window.location.replace("./dashboard.php");
-    } else {
-        alert("Invalid Info");
-        return;
-    }
-}
+// Login is handled by PHP/database
+// No JavaScript authentication needed
 
 //user pref bio text counter
 document.addEventListener('DOMContentLoaded', () =>{
