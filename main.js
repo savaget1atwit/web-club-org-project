@@ -1,4 +1,55 @@
 
+
+{
+  _id: ObjectId("..."),
+  org_code: "csclub",           // what they type into the "org" field
+  org_name: "Computer Science Club",
+  created_at: ISODate("...")
+}
+
+
+
+{
+  _id: ObjectId("..."),
+  org_id: ObjectId("..."),      // ref to organizations
+  wID: "W00123456",
+  password_hash: "$2y$10$...",
+  role: "member",               // "member" | "eboard" | "admin"
+  fname: "Jane",
+  lname: "Doe",
+  school: "CAS",
+  year: "Junior",
+  eboard_position: null,        // e.g. "Secretary" if role is eboard
+  profile_pic: "/media/blue_star.png",
+  bio: "",
+  attendance_points: 0,
+  created_at: ISODate("...")
+}
+
+{
+  _id: ObjectId("..."),
+  org_id: ObjectId("..."),
+  title: "General Body Meeting",
+  start: ISODate("2026-07-20T18:00:00"),
+  end: ISODate("2026-07-20T19:00:00"),
+  all_day: false,
+  color: "#35bae7",              // matches your color-coded key idea
+  url: null,
+  created_by: ObjectId("..."),   // user_id
+  created_at: ISODate("...")
+}
+
+{
+  _id: ObjectId("..."),
+  org_id: ObjectId("..."),
+  user_id: ObjectId("..."),
+  event_id: ObjectId("..."),
+  attended: true,
+  points_awarded: 10,
+  recorded_at: ISODate("...")
+}
+
+
 // login authentication with alert for invalid inputs
 function auth (){
     var org = document.getElementById("org").value;
@@ -13,16 +64,7 @@ function auth (){
     }
 }
 
-//user pref bio text counter
-document.addEventListener('DOMContentLoaded', () =>{
-    const bio = document.getElementById('bio');
-    const counter = document.getElementById('bio_counter');
-    const maxLength = 150;
 
-    bio.addEventListener('input', () => {
-        counter.textContent = `${bio.value.length} / ${maxLength}`;
-    });
-});
 
 
 //mock calendar srt up 
