@@ -38,7 +38,7 @@
         id="wID"
         name="wid"
         placeholder="W000123456"
-        pattern="W\d{8}"
+        pattern="W\d{9}"
         required>
     <br><br>
 
