@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 session_start();
 require __DIR__ . '/../config/db.php';
 
@@ -49,20 +48,7 @@ $upcoming_event = $db->events->findOne(
 // Grab the most recent announcement for this org
 $announcement = $db->announcements->findOne(
     ['org_id' => $org_id],
-    ['sort' => ['posted_at' => -1]]
-);
-=======
-
-session_start();
-
-if (!isset($_SESSION['user'])) {
-    header("Location: login.php");
-    exit();
-}
-
-$user = $_SESSION['user'];
-
->>>>>>> c5f1228100bc637e1fbcc672495b8bbc8c1cb6b7
+    ['sort' => ['posted_at' => -1]]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,7 +80,6 @@ $user = $_SESSION['user'];
 
 <main>
 
-<<<<<<< HEAD
     <h2>Welcome, <?= htmlspecialchars($user->fname) ?></h2>
     <div id="profile">
         <div id="pic"><img src="<?= htmlspecialchars($user->profile_pic) ?>"></div>
@@ -103,27 +88,6 @@ $user = $_SESSION['user'];
             <?= htmlspecialchars($user->school . ', ' . $user->year) ?><br>
             <?= htmlspecialchars($user->eboard_position ?? 'General Body') ?>
         </div>
-=======
-    <h2>
-    Welcome, <?php echo htmlspecialchars($user['name']); ?>
-</h2>
-    <div id = 'profile_text'>
-
-<b>
-<?php echo htmlspecialchars($user['name']); ?>
-</b>
-<br>
-
-Organization:
-<?php echo htmlspecialchars($user['organization']); ?>
-
-<br>
-
-Role:
-<?php echo htmlspecialchars($user['role']); ?>
-
-</div>
->>>>>>> c5f1228100bc637e1fbcc672495b8bbc8c1cb6b7
     </div>
 
     <section class="card">
@@ -141,22 +105,9 @@ Role:
         <p><?= $meetings_attended ?> / <?= $meetings_total ?> Meetings Attended</p>
     </section>
 
-<<<<<<< HEAD
     <section class="card">
         <h3>Attendance Points</h3>
         <p><?= $user->attendance_points ?? 0 ?> points</p>
-=======
-    <section class="Card">
-
-    <h3>
-    Attendance Points
-    </h3>
-
-    <p>
-    <?php echo $user['attendance_points']; ?> points
-    </p>
-
->>>>>>> c5f1228100bc637e1fbcc672495b8bbc8c1cb6b7
     </section>
 
     <section class="card">

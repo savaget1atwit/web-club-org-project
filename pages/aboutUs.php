@@ -63,7 +63,7 @@ mission statement,  -->
                             <?= htmlspecialchars($member->fname . ' ' . $member->lname) ?>
                         </p>
                         <blockquote class="eboard_quote">
-                            <?= htmlspecialchars($member->bio ?? '') ?>
+                            <?= htmlspecialchars($member->bio ?? 'No bio present.') ?>
                         </blockquote>
                     </div>
                 <?php endforeach; ?>

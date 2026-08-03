@@ -13,27 +13,30 @@
     $user_id = new MongoDB\BSON\ObjectId($_SESSION['user_id']);
 
 
-
-    // SAVE PROFILE BUTTON PRESSED
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-        $updates = [];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
-        // Update text information
-        if (isset($_POST['fname'])) {
-            $updates['fname'] = $_POST['fname'];
-        }
+    $updates = [
+        "fname" => $_POST['fname'],
+        "lname" => $_POST['lname'],
+        "bio" => $_POST['bio']
+    ];
 
-        if (isset($_POST['lname'])) {
-            $updates['lname'] = $_POST['lname'];
-        }
 
-        if (isset($_POST['bio'])) {
-            $updates['bio'] = $_POST['bio'];
-        }
+    $db->users->updateOne(
+        [
+            "_id" => $user_id
+        ],
+        [
+            '$set' => $updates
+        ]
+    );
 
+
+    header("Location: userPref.php");
+    exit;
 }
+
     $user = $db->users->findOne([
         '_id' => $user_id
     ]);
@@ -56,7 +59,6 @@
 
 <section id = 'edit_profile'>
     <h2>Edit Profile</h2>
-    <form method="POST" action="save_profile.php" enctype="multipart/form-data">
         <div id ='profile'>
             <div id = 'pic'><img id='profile_preview' src='<?= htmlspecialchars($user->profile_pic ?? '../media/blue_star.png') ?>' width='150'></div>
             <div id = 'profile_text'>
@@ -73,14 +75,13 @@
         <div id = 'bio_section'>
             <label for = 'biography'><h2>Bio</h2></label>
             <div id = 'bio_wrapper'>
-                <textarea id = 'bio' maxlength = '150' placeholder = 'Tell us about yourself...'><?= htmlspecialchars($user->bio ?? '') ?></textarea>
-                <span id = 'bio_counter'> 0/150 </span>
+                <?= htmlspecialchars($user->bio) ?><br>
+
             </div>
         </div>
 
         <br>
         <button type = 'button' id = 'editProfile'>Edit Profile</button>
-    </form>
 </section>
 
 <div id="editModal" class="modal">
@@ -103,7 +104,7 @@
 
 
             <label>Bio</label>
-            <textarea id = 'bio' maxlength = '150' placeholder = 'Tell us about yourself...'><?= htmlspecialchars($user->bio ?? '') ?></textarea>
+            <textarea id = 'bio' name = 'bio' maxlength = '150' placeholder = 'Tell us about yourself...'><?= htmlspecialchars($user->bio ?? '') ?></textarea>
             <span id = 'bio_counter'> 0/150 </span>
 
             <label>Profile Picture</label>
@@ -138,8 +139,7 @@
     const profileModal = document.getElementById("editModal");
 
     const closeButton = document.getElementById("close_modal");
-    
-    const saveButton = document.getElementById("save_profile");
+
 
 
     editButton.onclick = function(){
@@ -154,7 +154,7 @@
     window.onclick = function(event){
 
         if(event.target == modal){
-            modal.style.display = "none";
+            profileModal.style.display = "none";
         }
 
     }

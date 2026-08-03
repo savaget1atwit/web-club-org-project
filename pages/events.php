@@ -1,3 +1,21 @@
+<?php
+session_start();
+require __DIR__ . '/../config/db.php';
+
+if (!isset($_SESSION['org_id'])) {
+    header('Location: login.php');
+    exit;
+}
+
+$user_id = new MongoDB\BSON\ObjectId($_SESSION['user_id']);
+$org_id = new MongoDB\BSON\ObjectId($_SESSION['org_id']);
+
+$events = $db->events->find(['org_id' => $org_id]);
+
+?>
+
+$org = $db->organizations->findOne(['_id' => $org_id]);
+
 <!DOCTYPE html>    
     <html lang = "en">
 
@@ -27,6 +45,9 @@
         <h3>Tag 1: Career Building</h3><br>
 
             <div class = 'scroll_container'>
+                <?php if(empty($events)): ?>
+
+
                 <div class = 'card'>
                     <h2>Event 1</h2>
                     <p> More text about the event</p>
@@ -93,46 +114,23 @@
     <h2>Explore All</h2>
 
     <div class = 'wrapper'>
+        <?php if (empty($events)): ?>
+            <p>No events listed yet</p>
+                
+        <?php else: ?>
+            <?php foreach ($events as $event): ?>
         <div class = 'box'>
             <img src ="../media/blue_star.png">
-            <h2>Event 1</h2>
+            <h2><?= htmlspecialchars($event->event_name) ?></h2>
+            <p><?= htmlspecialchars($event->event_details ?: 'TBD') ?></p>
+            <p><?= htmlspecialchars($event->date_scheduled ?: 'TBD') ?></p>
+            <p><?= htmlspecialchars($event->location ?: 'TBD') ?></p>
+
             <p>detail detail detail</p>
         </div>
-        <div class = 'box'>
-            <img src ="../media/blue_star.png">
-            <h2>Event 2</h2>
-            <p>detail detail detail</p>
-        </div>
-        <div class = 'box'>
-            <img src ="../media/blue_star.png">
-            <h2>Event 3</h2>
-            <p>detail detail detail</p>
-        </div>
-        <div class = 'box'>
-            <img src ="../media/blue_star.png">
-            <h2>Event 4</h2>
-            <p>detail detail detail</p>
-        </div>
-        <div class = 'box'>
-            <img src ="../media/blue_star.png">
-            <h2>Event 5</h2>
-            <p>detail detail detail</p>
-        </div>
-        <div class = 'box'>
-            <img src ="../media/blue_star.png">
-            <h2>Event 6</h2>
-            <p>detail detail detail</p>
-        </div>
-        <div class = 'box'>
-            <img src ="../media/blue_star.png">
-            <h2>Event 7</h2>
-            <p>detail detail detail</p>
-        </div>
-        <div class = 'box'>
-            <img src ="../media/blue_star.png">
-            <h2>Event 8</h2>
-            <p>detail detail detail</p>
-        </div>
+    <?php endforeach; ?>
+
+<?php endif; ?>
     </div>
 
 </body>
