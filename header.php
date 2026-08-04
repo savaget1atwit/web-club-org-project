@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang = "en">
@@ -28,7 +29,6 @@
                 <li><a href = "./aboutUs.php">About Us</a></li>
                 <li><a href = "./calendar.php">Calendar</a></li>
                 <li><a href = "./events.php">Events</a></li>
-                <li><a href = "./userPref.php">User Preferences</a></li>
                 <li><a href = "">Contact Us</a></li>
             </ul>
         </nav>

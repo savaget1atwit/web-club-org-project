@@ -22,7 +22,7 @@
 
 <body>
 
-<?php include '../header.html' ?>
+<?php include '../header.php' ?>
     <h1>Calendar</h1>
     <hr>
     <div class = "calendar_container">

@@ -36,6 +36,8 @@ $meetings_total = $db->attendance_records->countDocuments([
     'user_id' => $user_id
 ]);
 
+$attendance_percent = ($meetings_total > 0) ? round(($meetings_attended / $meetings_total) * 100) : 0;
+
 // Grab the org's next upcoming event
 $upcoming_event = $db->events->findOne(
     [
@@ -49,7 +51,13 @@ $upcoming_event = $db->events->findOne(
 $announcement = $db->announcements->findOne(
     ['org_id' => $org_id],
     ['sort' => ['posted_at' => -1]]);
+
+$profilePic = !empty($user->profile_pic)
+    ? $user->profile_pic
+    : "../media/default-profile.png";
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,23 +74,27 @@ $announcement = $db->announcements->findOne(
 
 <body class="dashboard">
 
-<?php include '../header.html'; ?>
+<?php include '../header.php'; ?>
 
 <header>
     <!-- Mini nav board, scroll lower per each a href -->
-    <h1>Student Organization Portal</h1>
+    <h2>Welcome, <?= htmlspecialchars($user->fname) ?></h2>
     <nav>
-        <a href="announcements.html">Announcements</a>
-        <a href="profile.html">Profile</a>
+        <a href="announcements.php">Announcements</a>
+        <a href="profile.php">Profile</a>
         <a href="logout.php">Log Out</a>
     </nav>
+    <br>
 </header>
 
 <main>
 
-    <h2>Welcome, <?= htmlspecialchars($user->fname) ?></h2>
     <div id="profile">
-        <div id="pic"><img src="<?= htmlspecialchars($user->profile_pic) ?>"></div>
+        <div id="pic">
+            <?php
+                $profilePic = !empty($user->profile_pic)? $user->profile_pic: '../media/default-profile.png';
+            ?><img src="<?= htmlspecialchars($profilePic) ?>" alt="Profile Picture">
+        </div>
         <div id="profile_text">
             <b><?= htmlspecialchars($user->fname . ' ' . $user->lname) ?></b><br>
             <?= htmlspecialchars($user->school . ', ' . $user->year) ?><br>
@@ -90,35 +102,44 @@ $announcement = $db->announcements->findOne(
         </div>
     </div>
 
-    <section class="card">
+<section class = "dashboard_wrapper">
+    <div class="box">
         <h3>Upcoming Events</h3>
         <?php if ($upcoming_event): ?>
-            <p><?= htmlspecialchars($upcoming_event->title) ?> -
-                <?= htmlspecialchars($upcoming_event->start->toDateTime()->format('F j')) ?></p>
+            <strong><?= htmlspecialchars($upcoming_event->title) ?></strong>
+            <p><?= $upcoming_event->start->toDateTime()->format('F j, Y') ?></p>
         <?php else: ?>
             <p>No upcoming events scheduled.</p>
         <?php endif; ?>
-    </section>
+        </div>
 
-    <section class="card">
+    <div class="box">
         <h3>Attendance</h3>
-        <p><?= $meetings_attended ?> / <?= $meetings_total ?> Meetings Attended</p>
-    </section>
 
-    <section class="card">
+        <p><?= $meetings_attended ?> / <?= $meetings_total ?> Meetings Attended</p>
+        <p><?= $attendance_percent ?>%</p>
+        </div>
+
+    <div class="box">
         <h3>Attendance Points</h3>
         <p><?= $user->attendance_points ?? 0 ?> points</p>
-    </section>
+    </div>
 
-    <section class="card">
-        <h3>Recent Announcement</h3>
+    <div class="box announcement_card">
+        <h3>Latest Announcement</h3>
         <?php if ($announcement): ?>
-            <p><?= htmlspecialchars($announcement->body) ?></p>
+            <strong><?= htmlspecialchars($announcement->title) ?></strong>
+            <p><?= nl2br(htmlspecialchars($announcement->body)) ?></p>
+            <small>Posted:
+                <?= $announcement->posted_at->toDateTime()->format('F j, Y') ?>
+            </small>
+
         <?php else: ?>
             <p>No announcements yet.</p>
         <?php endif; ?>
-    </section>
 
+    </div>
+</section>
 </main>
 </body>
 </html>
